@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.textfield.CustomPasswordField?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+<AnchorPane id="AnchorPane" prefHeight="453.0" prefWidth="484.0" style="-fx-background-color: #0e5d0b;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redge.SignupController">
+   <children>
+      <Label layoutX="159.0" layoutY="14.0" text="REGISTRATION">
+         <font>
+            <Font name="Arial Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="but_signup" layoutX="159.0" layoutY="391.0" mnemonicParsing="false" onAction="#signupHandler" prefHeight="37.0" prefWidth="137.0" style="-fx-border-color: #0e5d0b; -fx-border-width: 2; -fx-background-color: #0dcbff;" text="SIGNUP">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <VBox layoutX="127.0" layoutY="65.0" prefHeight="279.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <CustomTextField fx:id="txt_fname" prefHeight="25.0" prefWidth="194.0" promptText="First Name" />
+            <CustomTextField fx:id="txt_lname" prefHeight="25.0" prefWidth="194.0" promptText="Last Name" />
+            <CustomTextField fx:id="txt_tname" prefHeight="25.0" prefWidth="194.0" promptText="Other Names" />
+            <CustomTextField fx:id="student_id" prefHeight="25.0" prefWidth="194.0" promptText="Student_ID" />
+            <HBox prefHeight="20.0" prefWidth="200.0" spacing="3.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Male">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tog_Radio" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Female" toggleGroup="$tog_Radio">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Others" toggleGroup="$tog_Radio">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <CustomTextField fx:id="txt_add" prefHeight="25.0" prefWidth="194.0" promptText="Address" />
+            <CustomPasswordField fx:id="txt_password" prefHeight="25.0" prefWidth="194.0" promptText="Password" />
+            <DatePicker fx:id="dob" promptText="Date of Birth" />
+            <HBox prefHeight="25.0" prefWidth="146.0" spacing="9.0">
+               <children>
+                  <CheckBox fx:id="check" mnemonicParsing="false" prefHeight="23.0" prefWidth="21.0" />
+                  <CustomPasswordField fx:id="admin_key" prefHeight="25.0" prefWidth="106.0" promptText="Admin Pass_Key" />
+               </children>
+               <padding>
+                  <Insets left="15.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="but_login" layoutX="406.0" layoutY="6.0" mnemonicParsing="false" onAction="#loginHandler" prefHeight="37.0" prefWidth="64.0" style="-fx-border-color: #0e5d0b; -fx-border-width: 2; -fx-background-color: #0e5d0b;" text="LOGIN">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label fx:id="exit" layoutX="9.0" layoutY="3.0" onMousePressed="#exitAction" text="x" textFill="#ff0f0f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

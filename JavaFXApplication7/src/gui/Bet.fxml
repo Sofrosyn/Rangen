@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="619.0" style="-fx-background-color: #0f6e0f;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="redge.BetController">
+   <children>
+      <Pane layoutX="54.0" layoutY="77.0" prefHeight="281.0" prefWidth="493.0">
+         <children>
+            <HBox fx:id="hbox" layoutX="37.0" layoutY="14.0" prefHeight="63.0" prefWidth="403.0">
+               <children>
+                  <ToggleButton fx:id="red" mnemonicParsing="false" onAction="#redAction" prefHeight="63.0" prefWidth="112.0" style="-fx-background-color: #e40f0f;" text="RED">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tog" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow color="#0d0d0d" />
+                     </effect>
+                  </ToggleButton>
+                  <ToggleButton fx:id="blue" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#blueAction" prefHeight="63.0" prefWidth="112.0" style="-fx-background-color: #1d0fb8;" text="BLUE" toggleGroup="$tog">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ToggleButton>
+                  <ToggleButton fx:id="yellow" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#yellowAction" prefHeight="63.0" prefWidth="112.0" style="-fx-background-color: #e7c208;" text="YELLOW" toggleGroup="$tog">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ToggleButton>
+                  <ToggleButton fx:id="green" layoutX="144.0" layoutY="10.0" mnemonicParsing="false" onAction="#greenAction" prefHeight="63.0" prefWidth="112.0" style="-fx-background-color: #1eb818;" text="GREEN" toggleGroup="$tog">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ToggleButton>
+               </children>
+            </HBox>
+            <JFXButton fx:id="play" buttonType="RAISED" layoutX="359.0" layoutY="120.0" onAction="#playAction" prefHeight="42.0" prefWidth="91.0" style="-fx-background-color: #1eb818;" text="Play">
+               <font>
+                  <Font name="Arial Bold" size="19.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="pick" layoutX="127.0" layoutY="223.0" text="Pick a Colour:" textFill="#070707">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="colour" layoutX="247.0" layoutY="220.0" text="Colour" textFill="#0d0d0d">
+               <font>
+                  <Font name="Algerian" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="134.0" text="No. of Outcomes:">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="oddChoice" layoutX="138.0" layoutY="130.0" prefHeight="25.0" prefWidth="53.0" />
+         </children>
+      </Pane>
+      <Label fx:id="regen" layoutX="191.0" layoutY="24.0" text="REGENATOR">
+         <font>
+            <Font name="Algerian" size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d70707" />
+                  <Stop color="#1212d0" offset="0.21305841924398625" />
+                  <Stop color="#ebe708" offset="0.4123711340206186" />
+                  <Stop color="#0dda0d" offset="0.6426116838487972" />
+                  <Stop color="#e80f0f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <GridPane layoutX="84.0" layoutY="366.0" prefHeight="82.0" prefWidth="433.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <StackPane fx:id="stack1" prefHeight="63.0" prefWidth="71.0">
+               <children>
+                  <Circle fx:id="circle1" fill="DODGERBLUE" radius="41.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#141414">
+                           <input>
+                              <Reflection fraction="0.43" />
+                           </input></InnerShadow>
+                     </effect>
+                  </Circle>
+                  <Text fx:id="text1" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stack2" prefHeight="63.0" prefWidth="71.0" GridPane.columnIndex="1">
+               <children>
+                  <Circle fx:id="circle2" fill="DODGERBLUE" radius="41.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#141414">
+                           <input>
+                              <Reflection fraction="0.43" />
+                           </input></InnerShadow>
+                     </effect>
+                  </Circle>
+                  <Text fx:id="text2" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stack4" prefHeight="63.0" prefWidth="71.0" GridPane.columnIndex="3">
+               <children>
+                  <Circle fx:id="circle4" fill="DODGERBLUE" radius="41.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#141414">
+                           <input>
+                              <Reflection fraction="0.43" />
+                           </input></InnerShadow>
+                     </effect>
+                  </Circle>
+                  <Text fx:id="text4" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stack3" prefHeight="63.0" prefWidth="71.0" GridPane.columnIndex="2">
+               <children>
+                  <Circle fx:id="circle3" fill="DODGERBLUE" radius="41.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#141414">
+                           <input>
+                              <Reflection fraction="0.43" />
+                           </input></InnerShadow>
+                     </effect>
+                  </Circle>
+                  <Text fx:id="text3" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stack5" prefHeight="63.0" prefWidth="71.0" GridPane.columnIndex="4">
+               <children>
+                  <Circle fx:id="circle5" fill="DODGERBLUE" radius="41.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#141414">
+                           <input>
+                              <Reflection fraction="0.43" />
+                           </input></InnerShadow>
+                     </effect>
+                  </Circle>
+                  <Text fx:id="text5" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+      <Label fx:id="show" layoutX="191.0" layoutY="473.0" prefHeight="20.0" prefWidth="219.0" text="POWERED BY SOFROSYNC">
+         <font>
+            <Font name="Algerian" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d70707" />
+                  <Stop color="#1212d0" offset="0.21305841924398625" />
+                  <Stop color="#ebe708" offset="0.4123711340206186" />
+                  <Stop color="#0dda0d" offset="0.6426116838487972" />
+                  <Stop color="#e80f0f" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField editable="false" layoutX="512.0" layoutY="20.0" prefHeight="55.0" prefWidth="73.0">
+         <effect>
+            <InnerShadow choke="0.6" color="#0e7212" height="38.79" radius="14.4475" />
+         </effect>
+      </TextField>
+      <Label fx:id="lblTimer" layoutX="529.0" layoutY="38.0" text="Label" textFill="#22c90f">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <InnerShadow choke="0.18" />
+   </effect>
+</AnchorPane>
